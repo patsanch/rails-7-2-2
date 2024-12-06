@@ -63,6 +63,7 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
+# https://gist.github.com/robzolkos/96ca00b56dee3f6ba7207ef57fceaa9c
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage data tmp
 
