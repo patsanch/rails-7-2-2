@@ -63,6 +63,9 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
+RUN useradd rails --create-home --shell /bin/bash && \
+    chown -R rails:rails db log storage data tmp
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
